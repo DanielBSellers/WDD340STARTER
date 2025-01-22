@@ -1,6 +1,158 @@
 /******* Change Box Model ***************/
+:root {
+  --fontHead: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --fontBody: Georgia, 'Times New Roman', Times, serif;
+  --grey: #242332;
+  --red: #8C3A3B;
+}
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+html {
+  background: url(../images/site/checkerboard.jpg);
+}
+body {
+  background-color: white;
+  border: solid, var(--red), 5px;
+  border-radius: 20px;
+  width: 85vw;
+  height: 95vh;
+  margin: auto;
+}
+header {
+margin: 5px;
+}
+header span a {
+  font-size: xx-large;
+  color: var(--grey);
+  font-family: var(--fontHead);
+  text-decoration: none;
+}
+#tools a {
+  float: right;
+  position: relative;
+  bottom: 3vh;
+  font-size: larger;
+  color: var(--grey);
+  font-family: var(--fontHead);
+  text-decoration: none;
+}
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: var(--fontHead);
+  list-style-type: none;
+  background-color: var(--grey);
+  width: 84.3vw;
+}
+nav ul li {
+  color: white;
+  padding: 10px;
+}
+body {
+  height: fit-content;
+}
+.welcome {
+  grid-area: welcome;
+  font-weight: bold;
+  color: var(--grey);
+  font-family: var(--fontBody);
+
+}
+.top {
+  display: grid;
+  grid-template-areas:
+    "welcome welcome"
+    "box car";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 4fr;
+}
+#batcar {
+  grid-area: car;
+  max-width: 60vw;
+}
+.topBox {
+  grid-area: box;
+  z-index: 5;
+  color: var(--red);
+  background-color: rgba(255, 255, 255, 0.2);
+  display: block;
+  margin-left: auto;
+}
+.topBox button {
+  font-family: var(--fontHead);
+  background-color: var(--red);
+  color: black;
+  padding: 5%;
+}
+.bottomGrid {
+  display: grid;
+  grid-template-areas:
+    "upG upG revs revs"
+    "flux flame revLi revLi"
+    "bump hubCaps revLi revLi";
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.upG {
+  grid-area: upG;
+  text-align: center;
+}
+.revs {
+  grid-area: revs;
+  text-align: center;
+}
+.flux {
+  grid-area: flux;
+}
+.flame {
+  grid-area: flame;
+}
+.revLi {
+  grid-area: revLi;
+}
+.revLi li {
+  padding-bottom: 5vh;
+}
+.bump {
+  grid-area: bump;
+}
+.hubCaps {
+  grid-area: hubCaps;
+}
+.flux, .flame, .bump, .hubCaps {
+  justify-self: center;
+  align-self: center;
+  height: 17vh;
+  width: 15vw;
+  background-color: var(--red);
+}
+.bottomGrid div img{
+  display: block;
+  margin: auto;
+}
+figcaption {
+  text-align: center;
+}
+
+/* mobile layout */
+
+@media (max-width: 600px) {
+  .revLi li {
+    padding-bottom: 2.5vh;
+  }
+  .bottomGrid {
+    grid-template-areas:
+      "revs revs"
+      "revLi revLi"
+      "revLi revLi"
+      "upG upG"
+      "flux flame"
+      "bump hubCaps";
+    grid-template-rows: 1fr 2fr 2fr 1fr 3fr 3fr;
+    grid-template-columns: 1fr 1fr;
+
+  }
 }
