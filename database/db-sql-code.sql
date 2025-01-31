@@ -250,3 +250,5 @@ SET
     inv_image = CONCAT(SUBSTRING(inv_image FROM 1 FOR LENGTH(inv_image) - LENGTH(SUBSTRING(inv_image FROM POSITION('/images' IN inv_image) FOR LENGTH(inv_image)))), '/vehicles', SUBSTRING(inv_image FROM POSITION('/images' IN inv_image) FOR LENGTH(inv_image))),
     inv_thumbnail = CONCAT(SUBSTRING(inv_thumbnail FROM 1 FOR LENGTH(inv_thumbnail) - LENGTH(SUBSTRING(inv_thumbnail FROM POSITION('/images' IN inv_thumbnail) FOR LENGTH(inv_thumbnail)))), '/vehicles', SUBSTRING(inv_thumbnail FROM POSITION('/images' IN inv_thumbnail) FOR LENGTH(inv_thumbnail)))
 ;
+
+-- COMMENT FOR TEST
