@@ -10,9 +10,10 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
-const inventoryRoute = require("./routes/inventoryRoute")
+const invController = require("./controllers/invController");
 const baseController = require("./controllers/baseController")
 const utilities = require("./utilities/")
+const inventoryRoute = require("./routes/inventoryRoute");
 
 /* ***********************
  * View Engine and Templates
@@ -33,6 +34,10 @@ app.use("/inv", inventoryRoute)
 app.use(async (req, res, next) => {
   next({status: 404, message: '404 – This page is playing hide and seek… and it’s winning'})
 })
+// inventory route
+app.use("/inventory", inventoryRoute)
+
+
 
 /* ***********************
 * Express Error Handler
