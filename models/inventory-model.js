@@ -25,7 +25,7 @@ async function getVehicleById(vehicleId) {
   try {
     const sql = "SELECT * FROM inventory WHERE inv_id = $1";
     const data = await pool.query(sql, [vehicleId]);
-    return data.rows[0]; // Return a single vehicle
+    return data.rows[0];
   } catch (error) {
     console.error("Error fetching vehicle details:", error);
     return null;
@@ -33,4 +33,4 @@ async function getVehicleById(vehicleId) {
 }
 
 
-module.exports = {getClassifications, getVehicleById};
+module.exports = {getInventoryByClassificationId,getClassifications, getVehicleById};

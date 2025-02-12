@@ -13,6 +13,10 @@ router.get("/type/:classificationId", utilities.handleErrors(invController.build
 
 //Inventory route
 router.get("/detail/:vehicleId", utilities.handleErrors(invController.buildByVehicleId));
+router.get("/detail/:vehicleId", (req, res, next) => {
+  console.log("Detail route hit with vehicleId:", req.params.vehicleId);
+  next();
+}, utilities.handleErrors(invController.buildByVehicleId));
 
 // Route to render the inventory page
 router.get("/", utilities.handleErrors(invController.buildInventory));
