@@ -29,13 +29,11 @@ app.use(static)
 // Index routes
 app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
-app.use("/inv", inventoryRoute)
+app.use("/inventory", inventoryRoute)
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({status: 404, message: '404 – This page is playing hide and seek… and it’s winning'})
 })
-// inventory route
-app.use("/inventory", inventoryRoute)
 
 
 
