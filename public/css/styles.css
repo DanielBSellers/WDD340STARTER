@@ -153,6 +153,58 @@ figcaption {
       "bump hubCaps";
     grid-template-rows: 1fr 2fr 2fr 1fr 3fr 3fr;
     grid-template-columns: 1fr 1fr;
-
   }
+}
+.notice {
+  text-align: center;
+  border: solid, 10px, var(--red), var(--fontBody);
+  border-radius: 10px;
+  background-color: gray;
+  padding: 10px;
+  list-style: none;
+}
+.notice {
+  text-align: center;
+  border: solid, 10px, var(--red), var(--fontHead);
+  border-radius: 10px;
+  color: black;
+  background-color: var(--red);
+  padding: 10px;
+  list-style: none;
+}
+
+/* login */
+.loginBody {
+  background-color: var(--grey);
+}
+.login {
+  background-color: var(--red);
+  border: solid, 5px;
+  border-radius: 10px;
+  max-width: 33vw;
+  margin: auto;
+}
+.loginBody label, .loginBody input, .loginBody p, .loginBody button {
+  font: var(--fontHead);
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 30vw;
+  font-weight: bold;
+  color: white;
+  margin: 1vh;
+}
+.loginBody label {
+  text-align: left;
+}
+.loginBody button {
+  width: auto;
+  color: var(--red);
+  margin: auto;
+  border-radius: 20px;
+  padding: .5vh;
+  width: 11vw;
+}
+.loginBody p a {
+  text-decoration: underline;
 }
